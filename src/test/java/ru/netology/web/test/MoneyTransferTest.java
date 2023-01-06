@@ -34,7 +34,7 @@ public class MoneyTransferTest {
         assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
-    
+
     @Test
     void shouldGetErrorMessageIfAmountMoreBalance() {
         var loginPage = open("http://localhost:9999", LoginPage.class);

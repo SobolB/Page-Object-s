@@ -20,10 +20,11 @@ public class DashboardPage {
         heading.shouldBe(visible);
     }
 
-    public int getFirstCardBalance(){
+    public int getFirstCardBalance() {
         var text = cards.first().text();
         return 0;
     }
+
     public int getCardBalance(DataHelper.CardInfo cardInfo) {
         var text = cards.findBy(Condition.text(cardInfo.getCardNumber().substring(12, 16))).getText();
         return extractBalance(text);
