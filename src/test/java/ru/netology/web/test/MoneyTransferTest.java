@@ -5,9 +5,7 @@ import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.LoginPage;
 
 
-import java.nio.channels.FileChannel;
-
-import static java.nio.channels.FileChannel.open;
+import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.web.data.DataHelper.*;
 
@@ -17,7 +15,7 @@ public class MoneyTransferTest {
     void shouldTransferFormFirstSecond() {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfo();
-        var verificationPage = LoginPage.validLogin(authInfo);
+        var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = getVerificationCode();
         var dashboardPage = verificationPage.validVerify(verificationCode);
         var firstCardInfo = getFirstCardInfo();
